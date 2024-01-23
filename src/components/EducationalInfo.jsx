@@ -30,7 +30,7 @@ export default function EducationalInfo() {
         <input type='date' name='end' id='end' />
       </label>
       <label>
-        Ongoing Studies:
+        I am currently studying here:
         <input type='checkbox' name='current' id='current' />
       </label>
       <button type='submit'>Submit</button>

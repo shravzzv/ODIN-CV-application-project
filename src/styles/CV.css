@@ -1,0 +1,22 @@
+main {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #121212;
+}
+
+@media (prefers-color-scheme: light) {
+  main {
+    background-color: #fff;
+    color: black;
+  }
+}
+
+@media (min-width: 601px) {
+  /* tablets and desktops */
+  main {
+    min-width: 45vw;
+    max-width: 50vw;
+    padding: 20px 40px;
+  }
+}
