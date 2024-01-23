@@ -53,6 +53,11 @@ label {
   width: 100%;
   gap: 5px;
 }
+label:has(input[type='checkbox']) {
+  justify-content: flex-start;
+  gap: 15px;
+  margin-top: 5px;
+}
 input {
   border-radius: 8px;
   border: none;
@@ -60,6 +65,9 @@ input {
   padding: 0.6em;
   font-weight: 500;
   background-color: #1a1a1a;
+}
+input[type='checkbox'] {
+  transform: scale(1.25);
 }
 form {
   display: flex;
@@ -101,7 +109,9 @@ form [type='submit'] {
   a:hover {
     color: #747bff;
   }
-  button {
+  button,
+  label,
+  input[type='checkbox'] {
     cursor: pointer;
   }
   button:hover {
