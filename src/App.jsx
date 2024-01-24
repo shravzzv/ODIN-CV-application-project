@@ -1,17 +1,48 @@
+import { useState } from 'react'
 import GeneralInfo from './components/GeneralInfo'
 import EducationalInfo from './components/EducationalInfo'
 import WorkInfo from './components/WorkInfo'
 import CV from './components/CV'
 
 function App() {
+  const [generalInfo, setGeneralInfo] = useState({
+    name: '',
+    email: '',
+    phone: '',
+  })
+
+  const [educationalInfo, setEducationalInfo] = useState({
+    school: '',
+    course: '',
+    startDate: '',
+    endDate: '',
+    isCurrent: false,
+  })
+
+  const [workInfo, setWorkInfo] = useState({
+    company: '',
+    position: '',
+    responsibilities: '',
+    startDate: '',
+    endDate: '',
+    isCurrent: false,
+  })
+
   return (
     <>
       <div className='islands'>
-        <GeneralInfo />
-        <EducationalInfo />
-        <WorkInfo />
+        <GeneralInfo data={generalInfo} updateData={setGeneralInfo} />
+        <EducationalInfo
+          data={educationalInfo}
+          updateData={setEducationalInfo}
+        />
+        <WorkInfo data={workInfo} updateData={setWorkInfo} />
       </div>
-      <CV />
+      <CV
+        generalInfo={generalInfo}
+        educationalInfo={educationalInfo}
+        workInfo={workInfo}
+      />
     </>
   )
 }

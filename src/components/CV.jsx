@@ -1,34 +1,74 @@
-export default function CV() {
+/* eslint-disable react/prop-types */
+export default function CV({ generalInfo, educationalInfo, workInfo }) {
+  const { name, email, phone } = generalInfo
+  const {
+    school,
+    course,
+    startDate: eduStart,
+    endDate: eduEnd,
+    isCurrent: eduIsCurrent,
+  } = educationalInfo
+  const {
+    company,
+    position,
+    responsibilities,
+    startDate: workStart,
+    endDate: workEnd,
+    isCurrent: workIsCurrent,
+  } = workInfo
+  let keyNum = 0
+
+  const formatDate = (dateString) => {
+    const options = { month: 'long', year: 'numeric' }
+    const date = new Date(dateString)
+    const formattedDate = date.toLocaleDateString('en-US', options)
+    return formattedDate
+  }
+
   return (
     <main>
-      <h1>Johh Doe</h1>
+      <h1>{name || 'Full name'}</h1>
       <p>
-        <a href='mailto:johhdoe@gmail.com'>johndoe@gmail.com</a>
+        <a href={`mailto:${email}`}>{email || 'email'}</a>
       </p>
-      <p>9812345670</p>
+      <p>{phone || 'phone number'}</p>
       <hr />
 
       <h2>Education</h2>
-      <h3>Medicine</h3>
-      <p>Harvard University</p>
-      <small>February 2018 - March 2022</small>
+      <h3>{course || 'Course'}</h3>
+      <p>
+        <strong>{school || 'School'}</strong>
+        {', '}
+        <small>
+          {(eduStart && formatDate(eduStart)) || 'started at'} -{' '}
+          {eduIsCurrent
+            ? 'present'
+            : (eduEnd && formatDate(eduEnd)) || 'ended at'}
+        </small>
+      </p>
 
       <h2>Experience</h2>
-      <h3>Front end Developer at Harrods Inc.</h3>
-      <small>July 2019 - April 2021</small>
+      <h3>{position || 'Position'}</h3>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ab
-        omnis vitae ratione earum possimus sapiente architecto perspiciatis eum
-        distinctio in eos delectus impedit a id fugiat, consequuntur ad. Fugiat.
+        <strong>{company || 'Company'}</strong>
+        {', '}
+        <small>
+          {(workStart && formatDate(workStart)) || 'started at'} -{' '}
+          {workIsCurrent
+            ? 'present'
+            : (workEnd && formatDate(workEnd)) || 'ended at'}
+        </small>
       </p>
-
-      <h3>Full Stack Developer at Google Inc.</h3>
-      <small>July 2023 - present</small>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ab
-        omnis vitae ratione earum possimus sapiente architecto perspiciatis eum
-        distinctio in eos delectus impedit a id fugiat, consequuntur ad. Fugiat.
-      </p>
+      <ul>
+        {responsibilities.length > 0 ? (
+          responsibilities
+            .split('\n')
+            .filter((item) => item)
+            .map((item) => <li key={keyNum++}>{item}</li>)
+        ) : (
+          <li>Job responsibilities</li>
+        )}
+      </ul>
     </main>
   )
 }
