@@ -18,38 +18,56 @@ export default function CV({ generalInfo, educationalInfo, workInfo }) {
   } = workInfo
   let keyNum = 0
 
+  const formatDate = (dateString) => {
+    const options = { month: 'long', year: 'numeric' }
+    const date = new Date(dateString)
+    const formattedDate = date.toLocaleDateString('en-US', options)
+    return formattedDate
+  }
+
   return (
     <main>
-      <h1>{name}</h1>
+      <h1>{name || 'Full name'}</h1>
       <p>
-        <a href='mailto:'>{email}</a>
+        <a href={`mailto:${email}`}>{email || 'email'}</a>
       </p>
-      <p>{phone}</p>
+      <p>{phone || 'phone number'}</p>
       <hr />
 
       <h2>Education</h2>
-      <h3>{course}</h3>
+      <h3>{course || 'Course'}</h3>
       <p>
-        <strong>{school}</strong>
+        <strong>{school || 'School'}</strong>
         {', '}
         <small>
-          {eduStart} - {eduIsCurrent ? 'present' : eduEnd}
+          {(eduStart && formatDate(eduStart)) || 'started at'} -{' '}
+          {eduIsCurrent
+            ? 'present'
+            : (eduEnd && formatDate(eduEnd)) || 'ended at'}
         </small>
       </p>
 
       <h2>Experience</h2>
-      <h3>{position}</h3>
+      <h3>{position || 'Position'}</h3>
       <p>
-        <strong>{company}</strong>
+        <strong>{company || 'Company'}</strong>
         {', '}
         <small>
-          {workStart} - {workIsCurrent ? 'present' : workEnd}
+          {(workStart && formatDate(workStart)) || 'started at'} -{' '}
+          {workIsCurrent
+            ? 'present'
+            : (workEnd && formatDate(workEnd)) || 'ended at'}
         </small>
       </p>
       <ul>
-        {responsibilities.map((item) => (
-          <li key={keyNum++}>{item}</li>
-        ))}
+        {responsibilities.length > 0 ? (
+          responsibilities
+            .split('\n')
+            .filter((item) => item)
+            .map((item) => <li key={keyNum++}>{item}</li>)
+        ) : (
+          <li>Job responsibilities</li>
+        )}
       </ul>
     </main>
   )
