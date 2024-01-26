@@ -1,3 +1,5 @@
+import '../styles/CV.css'
+
 /* eslint-disable react/prop-types */
 export default function CV({ generalInfo, educationalInfo, workInfo }) {
   const { name, email, phone } = generalInfo

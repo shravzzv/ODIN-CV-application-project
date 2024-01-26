@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import './styles/App.css'
 import GeneralInfo from './components/GeneralInfo'
 import EducationalInfo from './components/EducationalInfo'
 import WorkInfo from './components/WorkInfo'
 import CV from './components/CV'
+import Controls from './components/Controls'
 
 function App() {
   const [generalInfo, setGeneralInfo] = useState({
@@ -31,6 +33,7 @@ function App() {
   return (
     <>
       <div className='islands'>
+        <Controls />
         <GeneralInfo data={generalInfo} updateData={setGeneralInfo} />
         <EducationalInfo
           data={educationalInfo}

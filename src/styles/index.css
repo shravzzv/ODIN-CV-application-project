@@ -104,10 +104,6 @@ form {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: var(--form-bg-clr);
 }
-[type='submit'] {
-  margin-top: 5px;
-  align-self: flex-end;
-}
 
 @media (max-width: 600px) {
   /* phones only */

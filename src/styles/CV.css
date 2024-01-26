@@ -1,13 +1,15 @@
-main {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 10px;
-  padding: 20px;
-  background-color: var(--cv-bg-clr);
-}
-
-@media (min-width: 601px) {
-  /* tablets and desktops */
+@media screen {
   main {
-    padding: 20px 40px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: var(--cv-bg-clr);
+  }
+
+  @media (min-width: 601px) {
+    /* tablets and desktops */
+    main {
+      padding: 20px 40px;
+    }
   }
 }
