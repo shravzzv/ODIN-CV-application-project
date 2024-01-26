@@ -56,3 +56,18 @@
     align-self: stretch;
   }
 }
+
+/* print styles */
+@media print {
+  .islands {
+    display: none;
+  }
+
+  #root,
+  main {
+    padding: 0;
+    margin: 0;
+    font-size: 0.5rem;
+    width: 100%;
+  }
+}
