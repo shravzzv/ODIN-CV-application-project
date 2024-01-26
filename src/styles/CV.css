@@ -9,7 +9,5 @@ main {
   /* tablets and desktops */
   main {
     padding: 20px 40px;
-    max-width: 550px;
-    /* this limits the size of #root. When main reaches max-width, #root stops expanding and gets centered withing the body */
   }
 }

@@ -37,11 +37,7 @@ body {
   color-scheme: light dark;
   color: var(--txt-clr);
   background-color: var(--bg-clr);
-
   /* body only has a single child as #root */
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* default links */
@@ -111,11 +107,6 @@ form {
 [type='submit'] {
   margin-top: 5px;
   align-self: flex-end;
-}
-
-/* default lists */
-ul {
-  list-style-type: disc;
 }
 
 @media (max-width: 600px) {
