@@ -15,15 +15,7 @@ function App() {
   })
 
   const [educationalInfo, setEducationalInfo] = useState([])
-
-  const [workInfo, setWorkInfo] = useState({
-    company: '',
-    position: '',
-    responsibilities: '',
-    startDate: '',
-    endDate: '',
-    isCurrent: false,
-  })
+  const [workInfo, setWorkInfo] = useState([])
 
   return (
     <>
