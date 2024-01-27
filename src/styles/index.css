@@ -37,7 +37,12 @@
     --btn-bg-clr: #1a1a1a;
     --form-els-bg-clr: #1a1a1a;
     --cv-bg-clr: #121212;
-    --root-bg-image: linear-gradient(to top, #cd9cf2 0%, #f6f3ff 100%);
+    --root-bg-image: linear-gradient(
+      to bottom,
+      #323232 0%,
+      #3f3f3f 40%,
+      #1c1c1c 150%
+    );
   }
 }
 
