@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import '../styles/CV.css'
 
-/* eslint-disable react/prop-types */
 export default function CV({ generalInfo, educationalInfo, workInfo }) {
   const { name, email, phone } = generalInfo
+
   const {
     school,
     course,
@@ -10,6 +11,7 @@ export default function CV({ generalInfo, educationalInfo, workInfo }) {
     endDate: eduEnd,
     isCurrent: eduIsCurrent,
   } = educationalInfo
+
   const {
     company,
     position,
@@ -18,6 +20,7 @@ export default function CV({ generalInfo, educationalInfo, workInfo }) {
     endDate: workEnd,
     isCurrent: workIsCurrent,
   } = workInfo
+
   let keyNum = 0
 
   const formatDate = (dateString) => {
@@ -31,7 +34,9 @@ export default function CV({ generalInfo, educationalInfo, workInfo }) {
     <main>
       <h1>{name || 'Full name'}</h1>
       <p>
-        <a href={`mailto:${email}`}>{email || 'email'}</a>
+        <a href={`mailto:${email}`} target='_blank' rel='noreferrer'>
+          {email || 'email'}
+        </a>
       </p>
       <p>{phone || 'phone number'}</p>
       <hr />

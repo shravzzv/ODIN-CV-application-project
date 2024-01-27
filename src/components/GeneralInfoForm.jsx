@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-export default function GeneralInfo({ data, updateData }) {
+export default function GeneralInfoForm({ data, updateData }) {
   const { name, email, phone } = data
 
   const handleChange = (e) => {

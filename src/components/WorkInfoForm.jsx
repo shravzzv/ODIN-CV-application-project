@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-export default function WorkInfo({ data, updateData }) {
+export default function WorkInfoForm({ data, updateData }) {
   const { company, position, responsibilities, startDate, endDate, isCurrent } =
     data
 

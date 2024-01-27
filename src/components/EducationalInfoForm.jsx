@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-export default function EducationalInfo({ data, updateData }) {
+export default function EducationalInfoForm({ data, updateData }) {
   const { school, course, startDate, endDate, isCurrent } = data
 
   const handleChange = (e) => {
