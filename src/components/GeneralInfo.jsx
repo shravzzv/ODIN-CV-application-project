@@ -23,6 +23,7 @@ export default function GeneralInfo({ data, updateData }) {
           value={name}
           onChange={handleChange}
           required
+          autoComplete='on'
         />
       </label>
       <label>
@@ -34,6 +35,7 @@ export default function GeneralInfo({ data, updateData }) {
           placeholder='johndoe@mail.com'
           value={email}
           onChange={handleChange}
+          autoComplete='on'
           required
         />
       </label>
@@ -46,6 +48,7 @@ export default function GeneralInfo({ data, updateData }) {
           placeholder='9123456789'
           value={phone}
           onChange={handleChange}
+          autoComplete='on'
           required
         />
       </label>
