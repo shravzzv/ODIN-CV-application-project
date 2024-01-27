@@ -14,13 +14,7 @@ function App() {
     phone: '',
   })
 
-  const [educationalInfo, setEducationalInfo] = useState({
-    school: '',
-    course: '',
-    startDate: '',
-    endDate: '',
-    isCurrent: false,
-  })
+  const [educationalInfo, setEducationalInfo] = useState([])
 
   const [workInfo, setWorkInfo] = useState({
     company: '',

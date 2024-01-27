@@ -1,16 +1,9 @@
 /* eslint-disable react/prop-types */
+import { Fragment } from 'react'
 import '../styles/CV.css'
 
 export default function CV({ generalInfo, educationalInfo, workInfo }) {
   const { name, email, phone } = generalInfo
-
-  const {
-    school,
-    course,
-    startDate: eduStart,
-    endDate: eduEnd,
-    isCurrent: eduIsCurrent,
-  } = educationalInfo
 
   const {
     company,
@@ -42,17 +35,32 @@ export default function CV({ generalInfo, educationalInfo, workInfo }) {
       <hr />
 
       <h2>Education</h2>
-      <h3>{course || 'Course'}</h3>
-      <p>
-        <strong>{school || 'School'}</strong>
-        {', '}
-        <small>
-          {(eduStart && formatDate(eduStart)) || 'started at'} -{' '}
-          {eduIsCurrent
-            ? 'present'
-            : (eduEnd && formatDate(eduEnd)) || 'ended at'}
-        </small>
-      </p>
+      {educationalInfo.map((item) => {
+        const {
+          id,
+          school,
+          course,
+          startDate: eduStart,
+          endDate: eduEnd,
+          isCurrent: eduIsCurrent,
+        } = item
+
+        return (
+          <Fragment key={id}>
+            <h3>{course || 'Course'}</h3>
+            <p>
+              <strong>{school || 'School'}</strong>
+              {', '}
+              <small>
+                {(eduStart && formatDate(eduStart)) || 'started at'} -{' '}
+                {eduIsCurrent
+                  ? 'present'
+                  : (eduEnd && formatDate(eduEnd)) || 'ended at'}
+              </small>
+            </p>
+          </Fragment>
+        )
+      })}
 
       <h2>Experience</h2>
       <h3>{position || 'Position'}</h3>
