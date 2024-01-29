@@ -45,7 +45,7 @@ export default function EducationalInfoForm({ data, updateData }) {
         const { id, school, course, startDate, endDate, isCurrent } = info
 
         return (
-          <form key={id}>
+          <form key={id} className='scale-in-center'>
             <h2 className='form-heading'>Educational Information</h2>
             <label>
               School:
@@ -99,7 +99,11 @@ export default function EducationalInfoForm({ data, updateData }) {
                 onChange={(e) => handleChange(e, id)}
               />
             </label>
-            <button type='button' onClick={() => handleRemoveForm(id)}>
+            <button
+              type='button'
+              className='removeBtn'
+              onClick={() => handleRemoveForm(id)}
+            >
               Remove
             </button>
           </form>

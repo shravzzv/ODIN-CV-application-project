@@ -54,7 +54,7 @@ export default function WorkInfoForm({ data, updateData }) {
         } = info
 
         return (
-          <form key={id}>
+          <form key={id} className='scale-in-center'>
             <h2 className='form-heading'>Work Experience</h2>
             <label>
               Company:
@@ -117,7 +117,11 @@ export default function WorkInfoForm({ data, updateData }) {
                 onChange={(e) => handleChange(e, id)}
               />
             </label>
-            <button type='button' onClick={() => handleRemoveForm(id)}>
+            <button
+              type='button'
+              className='removeBtn'
+              onClick={() => handleRemoveForm(id)}
+            >
               Remove
             </button>
           </form>
