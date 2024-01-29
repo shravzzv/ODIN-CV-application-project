@@ -17,6 +17,16 @@
   --btn-bg-clr: #f0e8e8;
   --form-els-bg-clr: #f0e8e8;
   --cv-bg-clr: #ffffff;
+  --root-bg-image: linear-gradient(to top, #cd9cf2 0%, #f6f3ff 100%);
+  --islands-bg-image: linear-gradient(
+    to bottom right,
+    #b8cbb8 0%,
+    #b8cbb8 0%,
+    #b465da 0%,
+    #cf6cc9 33%,
+    #ee609c 66%,
+    #ee609c 100%
+  );
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,6 +37,12 @@
     --btn-bg-clr: #1a1a1a;
     --form-els-bg-clr: #1a1a1a;
     --cv-bg-clr: #121212;
+    --root-bg-image: linear-gradient(
+      to bottom,
+      #323232 0%,
+      #3f3f3f 40%,
+      #1c1c1c 150%
+    );
   }
 }
 
@@ -103,6 +119,7 @@ form {
   padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: var(--form-bg-clr);
+  padding-bottom: 40px;
 }
 
 @media (max-width: 600px) {
@@ -135,6 +152,7 @@ form {
   /* tablets only */
   form {
     padding: 1em;
+    padding-bottom: 40px;
   }
 }
 
@@ -142,5 +160,6 @@ form {
   /* large screens only */
   form {
     padding: 1em 1.5em;
+    padding-bottom: 40px;
   }
 }

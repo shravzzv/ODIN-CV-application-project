@@ -1,10 +1,11 @@
 #root {
   max-width: 1600px;
   margin: 0 auto;
-  padding: 30px 10px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 25px;
+  background-image: var(--root-bg-image);
 }
 
 .islands {
@@ -49,7 +50,7 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 20px;
     border-radius: 10px;
-    background-color: var(--form-els-bg-clr);
+    background-image: var(--islands-bg-image);
   }
 
   main {
@@ -69,5 +70,6 @@
     margin: 0;
     font-size: 0.5rem;
     width: 100%;
+    background-color: var(--bg-clr);
   }
 }

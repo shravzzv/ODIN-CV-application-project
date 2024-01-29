@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import './styles/App.css'
-import GeneralInfo from './components/GeneralInfo'
-import EducationalInfo from './components/EducationalInfo'
-import WorkInfo from './components/WorkInfo'
-import CV from './components/CV'
+
 import Controls from './components/Controls'
+import GeneralInfoForm from './components/GeneralInfoForm'
+import EducationalInfoForm from './components/EducationalInfoForm'
+import WorkInfoForm from './components/WorkInfoForm'
+import CV from './components/CV'
 
 function App() {
   const [generalInfo, setGeneralInfo] = useState({
@@ -13,34 +14,24 @@ function App() {
     phone: '',
   })
 
-  const [educationalInfo, setEducationalInfo] = useState({
-    school: '',
-    course: '',
-    startDate: '',
-    endDate: '',
-    isCurrent: false,
-  })
-
-  const [workInfo, setWorkInfo] = useState({
-    company: '',
-    position: '',
-    responsibilities: '',
-    startDate: '',
-    endDate: '',
-    isCurrent: false,
-  })
+  const [educationalInfo, setEducationalInfo] = useState([])
+  const [workInfo, setWorkInfo] = useState([])
 
   return (
     <>
       <div className='islands'>
         <Controls />
-        <GeneralInfo data={generalInfo} updateData={setGeneralInfo} />
-        <EducationalInfo
+
+        <GeneralInfoForm data={generalInfo} updateData={setGeneralInfo} />
+
+        <EducationalInfoForm
           data={educationalInfo}
           updateData={setEducationalInfo}
         />
-        <WorkInfo data={workInfo} updateData={setWorkInfo} />
+
+        <WorkInfoForm data={workInfo} updateData={setWorkInfo} />
       </div>
+
       <CV
         generalInfo={generalInfo}
         educationalInfo={educationalInfo}
