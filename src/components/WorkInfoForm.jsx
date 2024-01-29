@@ -54,7 +54,7 @@ export default function WorkInfoForm({ data, updateData }) {
         } = info
 
         return (
-          <form key={id}>
+          <form key={id} className='scale-in-center'>
             <h2 className='form-heading'>Work Experience</h2>
             <label>
               Company:
