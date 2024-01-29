@@ -16,3 +16,9 @@
 .printBtn {
   margin: 5px 0;
 }
+
+@media (prefers-color-scheme: dark) {
+  .printBtn {
+    border-color: white;
+  }
+}
