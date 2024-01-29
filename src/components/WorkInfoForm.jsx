@@ -117,7 +117,11 @@ export default function WorkInfoForm({ data, updateData }) {
                 onChange={(e) => handleChange(e, id)}
               />
             </label>
-            <button type='button' onClick={() => handleRemoveForm(id)}>
+            <button
+              type='button'
+              className='removeBtn'
+              onClick={() => handleRemoveForm(id)}
+            >
               Remove
             </button>
           </form>
